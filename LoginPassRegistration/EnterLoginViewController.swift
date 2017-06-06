@@ -46,11 +46,6 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    // MARK: after press Done check second textField
-    
-    @IBAction func editingEndEnterYourPasswordTextField(_ sender: Any) {
-        //enterYourPasswordTextField.becomeFirstResponder()
-    }
     
     // MARK: button sign in
     
@@ -73,10 +68,6 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         } else {
             alertMessage(message: "Login or password is incorrect")
         }
-        
-        
-        
-        
     }
     
     

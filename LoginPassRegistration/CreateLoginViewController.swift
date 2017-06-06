@@ -57,10 +57,7 @@ class CreateLoginViewController: UIViewController, UITextFieldDelegate {
         
        
         // go to first ViewController
-        let storyboard = UIStoryboard(name: "EnterAndRegistration", bundle: nil)
-        let nextViewController = storyboard.instantiateViewController(withIdentifier: "EnterLoginViewController")
-        navigationController?.pushViewController(nextViewController, animated: true)
-        
+        navigationController?.popViewController(animated: true)
         
     }
     
@@ -77,10 +74,16 @@ class CreateLoginViewController: UIViewController, UITextFieldDelegate {
             goButton.backgroundColor = UIColor.gray        } else {
             goButton.isEnabled = true
             goButton.backgroundColor = UIColor.black
+            
+            
         }
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // hide keyboards
+        view.endEditing(true)
+        return true
+    }
     
     
     // alert

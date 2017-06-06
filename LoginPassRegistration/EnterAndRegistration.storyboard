@@ -42,7 +42,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="editingEndEnterYourPasswordTextField:" destination="tri-9x-HXv" eventType="editingDidEnd" id="MIH-a2-Y1x"/>
                                     <outlet property="delegate" destination="tri-9x-HXv" id="t0o-CO-N6r"/>
@@ -140,7 +140,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="dDg-m4-0On" id="BdD-yw-eDe"/>
                                 </connections>
@@ -156,7 +156,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="dDg-m4-0On" id="3rf-lr-SOz"/>
                                 </connections>
