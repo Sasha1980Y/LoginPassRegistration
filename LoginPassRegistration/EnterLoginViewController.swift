@@ -36,6 +36,15 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    // go to create login
+    @IBAction func signUpButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "EnterAndRegistration", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "CreateLoginViewController")
+        navigationController?.pushViewController(nextViewController, animated: true)
+        
+        
+    }
     
     // MARK: after press Done check second textField
     
@@ -48,10 +57,26 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signInButton(_ sender: Any) {
         
         // if textField is empty
-        if enterYourLoginTextField.text == "" || enterYourPasswordTextField.text == "" {
+        if enterYourLoginTextField.text == "" || enterYourPasswordTextField.text == "" || (enterYourLoginTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty)! || (enterYourPasswordTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty)! {
             alertMessage(message: "Please fill all data")
             return
         }
+        // if login or password is incorrect
+        if WordWithData.userAlreadyExists(login: enterYourLoginTextField.text!) {
+            if let user = WordWithData.getUser(login: enterYourLoginTextField.text!, password: enterYourPasswordTextField.text!) {
+                
+            } else {
+                alertMessage(message: "Login or password is incorrect")
+                return
+            }
+            
+        } else {
+            alertMessage(message: "Login or password is incorrect")
+        }
+        
+        
+        
+        
     }
     
     
@@ -78,20 +103,18 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
-    
-    // MARK: when enterYourLoginTextField is active and press Next go to enterYourPasswordTextField
-    @IBAction func primary(_ sender: Any) {
-        enterYourPasswordTextField.becomeFirstResponder()
+    // when press Next in enterYourPasswordTextField
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == enterYourPasswordTextField {
+            signInButton(enterYourPasswordTextField)
+        }
         
+        // MARK: when enterYourLoginTextField is active and press Next go to enterYourPasswordTextField
+        if textField == enterYourLoginTextField {
+            enterYourPasswordTextField.becomeFirstResponder()
+        }
+        return true
     }
-    
-    
-   
-    @IBAction func primaryEnterYourPassword(_ sender: Any) {
-        signInButton(enterYourPasswordTextField)
-    }
-
-    
     
     
     

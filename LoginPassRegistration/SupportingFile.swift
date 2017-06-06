@@ -16,6 +16,10 @@ class User {
         self.login = login
         self.password = password
     }
+    required init(userInfo: [String: Any]) {
+        self.login = userInfo["login"] as! String
+        self.password = userInfo["password"] as! String
+    }
 }
 
 // MARK: class for work with data

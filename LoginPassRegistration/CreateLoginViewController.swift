@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CreateLoginViewController: UIViewController {
+
+
+class CreateLoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var createYourLoginTextField: UITextField!
     
@@ -16,10 +18,18 @@ class CreateLoginViewController: UIViewController {
     
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     
+    @IBOutlet weak var goButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // "GO" is not activity
+        goButton.backgroundColor = UIColor.gray
+        goButton.isEnabled = false
+        
+        // we controll enter info in textField
+        textFieldDetective()
+        
+                // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +39,49 @@ class CreateLoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
+        goButton.isEnabled = false
+        goButton.backgroundColor = UIColor.gray
     }
+    
+    
+    // press GO button
+    @IBAction func goButtonAction(_ sender: Any) {
+        
+        if createYourPasswordTextField.text != repeatPasswordTextField.text {
+            alertMessage(message: "Entered passwords are different")
+            
+        }
+        
+        // add user
+        WordWithData.saveUser(userToSave: User(login: createYourLoginTextField.text!, password: createYourPasswordTextField.text!))
+        
+       
+        // go to first ViewController
+        let storyboard = UIStoryboard(name: "EnterAndRegistration", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "EnterLoginViewController")
+        navigationController?.pushViewController(nextViewController, animated: true)
+        
+        
+    }
+    
+    // wait when field is not empty
+    func textFieldDetective() {
+        createYourLoginTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        createYourPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        repeatPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+    }
+    
+    // MARK: all field full
+    func textFieldDidChange(textField: UITextField) {
+        if (createYourLoginTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty)! || (createYourPasswordTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty)! || (repeatPasswordTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty)! || createYourLoginTextField.text == "" || createYourPasswordTextField.text == "" || repeatPasswordTextField.text == "" {            goButton.isEnabled = false
+            goButton.backgroundColor = UIColor.gray        } else {
+            goButton.isEnabled = true
+            goButton.backgroundColor = UIColor.black
+        }
+    }
+    
+    
+    
     
     // alert
     func alertMessage(message: String) {
@@ -39,4 +91,8 @@ class CreateLoginViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    
+    
+    
 }
