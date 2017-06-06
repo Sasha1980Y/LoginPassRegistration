@@ -60,8 +60,8 @@
 			children = (
 				7F5198A51EE56E2F009D7229 /* AppDelegate.swift */,
 				7F5198B91EE56F2F009D7229 /* EnterLoginViewController.swift */,
-				7F5198BF1EE57C68009D7229 /* SupportingFile.swift */,
 				7F5198BB1EE56F58009D7229 /* CreateLoginViewController.swift */,
+				7F5198BF1EE57C68009D7229 /* SupportingFile.swift */,
 				7F5198B71EE56EC5009D7229 /* EnterAndRegistration.storyboard */,
 				7F5198AC1EE56E2F009D7229 /* Assets.xcassets */,
 				7F5198AE1EE56E2F009D7229 /* LaunchScreen.storyboard */,
@@ -301,6 +301,7 @@
 				7F5198B61EE56E2F009D7229 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -30,6 +30,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="primary:" destination="tri-9x-HXv" eventType="primaryActionTriggered" id="gmF-4H-0eN"/>
+                                    <outlet property="delegate" destination="tri-9x-HXv" id="EkP-LV-MpM"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asP-Y4-FI0">
                                 <rect key="frame" x="10" y="134" width="355" height="30"/>
@@ -42,6 +46,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="editingEndEnterYourPasswordTextField:" destination="tri-9x-HXv" eventType="editingDidEnd" id="MIH-a2-Y1x"/>
+                                    <action selector="primaryEnterYourPassword:" destination="tri-9x-HXv" eventType="primaryActionTriggered" id="lth-Af-qCY"/>
+                                    <outlet property="delegate" destination="tri-9x-HXv" id="t0o-CO-N6r"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwp-Um-NuH">
@@ -53,6 +59,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInButton:" destination="tri-9x-HXv" eventType="touchUpInside" id="itm-qY-jal"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKx-13-D0W">
                                 <rect key="frame" x="66" y="274" width="243" height="60"/>
