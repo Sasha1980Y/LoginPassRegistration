@@ -56,10 +56,12 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
             alertMessage(message: "Please fill all data")
             return
         }
+        
         // if login or password is incorrect
-        if WordWithData.userAlreadyExists(login: enterYourLoginTextField.text!) {
-            if let user = WordWithData.getUser(login: enterYourLoginTextField.text!, password: enterYourPasswordTextField.text!) {
-                
+        if let  loginText = enterYourLoginTextField.text, let enterText = enterYourPasswordTextField.text {
+        if WordWithData.userAlreadyExists(login: loginText) {
+            if let newUser = WordWithData.getUser(login: loginText, password: enterText) {
+                print(newUser.login)
             } else {
                 alertMessage(message: "Login or password is incorrect")
                 return
@@ -67,6 +69,7 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             alertMessage(message: "Login or password is incorrect")
+        }
         }
     }
     
@@ -78,6 +81,7 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         alertController.addAction(actionController)
         
         present(alertController, animated: true, completion: nil)
+        
     }
     
     // when enterLoginTextField is active
@@ -94,10 +98,13 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+    
     // when press Next in enterYourPasswordTextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == enterYourPasswordTextField {
-            signInButton(enterYourPasswordTextField)
+        if textField == enterYourPasswordTextField || enterYourPasswordTextField.text != "" {
+            
+            signInButton(view)
         }
         
         // MARK: when enterYourLoginTextField is active and press Next go to enterYourPasswordTextField
@@ -107,7 +114,6 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
-    
+        
 
 }
