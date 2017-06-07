@@ -53,8 +53,11 @@ class CreateLoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         // add user
+        if !WordWithData.userAlreadyExists(login: createYourLoginTextField.text!) {
         WordWithData.saveUser(userToSave: User(login: createYourLoginTextField.text!, password: createYourPasswordTextField.text!))
-        
+        } else {
+            alertMessage(message: "User with entered login already exists")
+        }
        
         // go to first ViewController
         navigationController?.popViewController(animated: true)
