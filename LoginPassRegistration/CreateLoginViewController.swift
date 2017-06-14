@@ -52,7 +52,7 @@ class CreateLoginViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        // add user
+        // add user if he not exists
         if !WordWithData.userAlreadyExists(login: createYourLoginTextField.text!) {
         WordWithData.saveUser(userToSave: User(login: createYourLoginTextField.text!, password: createYourPasswordTextField.text!))
         } else {

@@ -71,6 +71,13 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
             alertMessage(message: "Login or password is incorrect")
         }
         }
+        
+        // go to Author table
+        
+        let storyboard = UIStoryboard(name: "StoryboardForTable", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ForTable")
+        present(vc, animated: true)
+        
     }
     
     
