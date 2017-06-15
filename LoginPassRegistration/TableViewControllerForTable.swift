@@ -8,8 +8,12 @@
 
 import UIKit
 
-class TableViewControllerForTable: UITableViewController {
+class TableViewControllerForTable: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
+    
+    
+    
+    
     let sections: [String] = ["Section 1"]
     let s1Data:[String] = ["Row 1","Row 2","Row 3"]
     //let s2Data:[String] = ["Row 1","Row 2","Row 3"]
@@ -17,15 +21,7 @@ class TableViewControllerForTable: UITableViewController {
     
     var sectionData: [Int: [String]] = [:]
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // MARK: Download
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +31,13 @@ class TableViewControllerForTable: UITableViewController {
     }
     
     
+    
+    
+    
+    
+    // MARK: My function
+    
+    // change status bar style
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -63,9 +66,12 @@ class TableViewControllerForTable: UITableViewController {
     
     // view for section
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        
         let cell =  tableView.dequeueReusableCell(withIdentifier: "HeaderCell") //as! HeaderViewCell
         return cell
     }
+    
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,55 +81,59 @@ class TableViewControllerForTable: UITableViewController {
         return cell
     }
     
-
-    	
+    
+    /*
+    // MARK: UIImagePickerControllerDelegate
+    
+    @IBAction func selectedPhoto(_ sender: UITapGestureRecognizer) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")  }
+        
+        dismiss(animated: true, completion: nil)
+    }
+ 
+ 
+ 
+ 
+    */
+    
+    // MARK: button Exit
+    
+    @IBAction func buttonExit(_ sender: Any) {
+        
+        let enterLoginStoryboard = UIStoryboard.init(name: "EnterAndRegistration", bundle: nil)
+        let vc = enterLoginStoryboard.instantiateViewController(withIdentifier: "EnterLoginViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
+    // Tap gesture image
+    
+    @IBAction func goToPhoto(_ sender: UITapGestureRecognizer) {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+        
+        
+        
+        
+        print("go to image")
+    }
     
     
     
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

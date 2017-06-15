@@ -9,12 +9,14 @@
 import UIKit
 
 class HeaderViewCell: UITableViewCell {
+    
 
     @IBOutlet weak var headerImage: UIImageView!
-   
-    @IBOutlet weak var headerLabel: UILabel!
     
     @IBOutlet weak var exitButton: UIButton!
+    
+    @IBOutlet weak var headerLabel: UILabel!
+    
     
     
 }

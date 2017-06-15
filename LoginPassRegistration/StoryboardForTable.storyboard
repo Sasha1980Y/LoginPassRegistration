@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ptc-8l-5Cq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,42 +18,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="84" id="BUL-Kq-mmZ" customClass="HeaderViewCell" customModule="LoginPassRegistration" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="84"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="128" id="BUL-Kq-mmZ" customClass="HeaderViewCell" customModule="LoginPassRegistration" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BUL-Kq-mmZ" id="ZYs-Rw-ZpK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YX-lE-UZH">
-                                            <rect key="frame" x="19" y="72" width="42" height="21"/>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="accaunt" translatesAutoresizingMaskIntoConstraints="NO" id="sNH-gP-sJd">
+                                            <rect key="frame" x="14" y="27" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <gestureRecognizers/>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="0aP-du-PoC" appends="YES" id="JYn-ub-roj"/>
+                                            </connections>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eze-rB-1pD">
+                                            <rect key="frame" x="28" y="97" width="42" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="accaunt" translatesAutoresizingMaskIntoConstraints="NO" id="pxt-1J-qU1">
-                                            <rect key="frame" x="13" y="24" width="50" height="50"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PA-Wd-HqR">
+                                            <rect key="frame" x="300" y="40" width="46" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKf-Tr-6s1">
-                                            <rect key="frame" x="314" y="24" width="46" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <gestureRecognizers/>
                                             <state key="normal" backgroundImage="Exit"/>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="w5L-4N-0Mm" appends="YES" id="xmQ-Xl-hhk"/>
+                                            </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="exitButton" destination="vKf-Tr-6s1" id="zzM-Rj-CN7"/>
-                                    <outlet property="headerImage" destination="pxt-1J-qU1" id="0kq-Ut-TGY"/>
-                                    <outlet property="headerLabel" destination="3YX-lE-UZH" id="llw-fo-IZ0"/>
+                                    <outlet property="exitButton" destination="5PA-Wd-HqR" id="md9-MM-QsN"/>
+                                    <outlet property="headerImage" destination="sNH-gP-sJd" id="GOl-fS-0kv"/>
+                                    <outlet property="headerLabel" destination="Eze-rB-1pD" id="1Vb-lu-hvq"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rci-Ft-bxX" customClass="PrototypViewCell" customModule="LoginPassRegistration" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="112" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="156" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rci-Ft-bxX" id="0ZJ-oU-HDu">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -66,10 +74,39 @@
                             <outlet property="delegate" destination="Q9K-vX-f6z" id="7mU-6r-cv2"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Z04-Oz-mXf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrY-jd-NB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0aP-du-PoC">
+                    <connections>
+                        <action selector="goToPhoto:" destination="Q9K-vX-f6z" id="W1L-gH-ah2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="w5L-4N-0Mm">
+                    <connections>
+                        <action selector="buttonExit:" destination="Q9K-vX-f6z" id="X9e-ar-McL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="16.800000000000001" y="106.59670164917542"/>
+            <point key="canvasLocation" x="956" y="106.59670164917542"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jPd-v3-1ph">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ptc-8l-5Cq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TrB-Q7-22I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q9K-vX-f6z" kind="relationship" relationship="rootViewController" id="KXZ-Lg-mLw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyN-rR-xdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="107"/>
         </scene>
     </scenes>
     <resources>
