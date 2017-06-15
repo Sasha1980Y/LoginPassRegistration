@@ -35,7 +35,7 @@
                                             </connections>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eze-rB-1pD">
-                                            <rect key="frame" x="28" y="97" width="42" height="29"/>
+                                            <rect key="frame" x="28" y="94" width="42" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,7 +110,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Exit" width="24" height="24"/>
+        <image name="Exit" width="76" height="76"/>
         <image name="accaunt" width="24" height="24"/>
     </resources>
 </document>

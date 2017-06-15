@@ -10,10 +10,6 @@ import UIKit
 
 class TableViewControllerForTable: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
-    
-    
-    
-    
     let sections: [String] = ["Section 1"]
     let s1Data:[String] = ["Row 1","Row 2","Row 3"]
     //let s2Data:[String] = ["Row 1","Row 2","Row 3"]
@@ -25,13 +21,8 @@ class TableViewControllerForTable: UITableViewController, UIImagePickerControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         sectionData = [0: s1Data]
     }
-    
-    
-    
     
     
     
@@ -68,7 +59,15 @@ class TableViewControllerForTable: UITableViewController, UIImagePickerControlle
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "HeaderCell") //as! HeaderViewCell
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderViewCell
+        
+        cell.headerLabel.text = "OK"
+        
+        
+        // job round image
+        cell.headerImage.layer.cornerRadius = (cell.headerImage.frame.size.width + 50) / 2
+        //cell.headerImage.clipsToBounds = true
+        
         return cell
     }
     
@@ -82,31 +81,6 @@ class TableViewControllerForTable: UITableViewController, UIImagePickerControlle
     }
     
     
-    /*
-    // MARK: UIImagePickerControllerDelegate
-    
-    @IBAction func selectedPhoto(_ sender: UITapGestureRecognizer) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")  }
-        
-        dismiss(animated: true, completion: nil)
-    }
- 
- 
- 
- 
-    */
-    
     // MARK: button Exit
     
     @IBAction func buttonExit(_ sender: Any) {
@@ -117,7 +91,7 @@ class TableViewControllerForTable: UITableViewController, UIImagePickerControlle
         
     }
     
-    // Tap gesture image
+    // Tap gesture image go to photo gallery
     
     @IBAction func goToPhoto(_ sender: UITapGestureRecognizer) {
         
@@ -126,10 +100,6 @@ class TableViewControllerForTable: UITableViewController, UIImagePickerControlle
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
         
-        
-        
-        
-        print("go to image")
     }
     
     
