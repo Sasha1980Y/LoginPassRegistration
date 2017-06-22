@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ptc-8l-5Cq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cKz-yt-TaS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,108 +9,91 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller For Table-->
-        <scene sceneID="ckQ-QV-cvZ">
+        <!--Author Table View Controller-->
+        <scene sceneID="xfo-gf-2wL">
             <objects>
-                <tableViewController storyboardIdentifier="ForTable" id="Q9K-vX-f6z" customClass="TableViewControllerForTable" customModule="LoginPassRegistration" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JVi-Rp-Fpy">
+                <viewController storyboardIdentifier="ForTable" id="Y2j-GN-f4B" customClass="AuthorTableViewController" customModule="LoginPassRegistration" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gyt-MO-tfd"/>
+                        <viewControllerLayoutGuide type="bottom" id="cIt-D4-GLf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8hC-nG-4DH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="128" id="BUL-Kq-mmZ" customClass="HeaderViewCell" customModule="LoginPassRegistration" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BUL-Kq-mmZ" id="ZYs-Rw-ZpK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="accaunt" translatesAutoresizingMaskIntoConstraints="NO" id="sNH-gP-sJd">
-                                            <rect key="frame" x="14" y="27" width="70" height="70"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <gestureRecognizers/>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="0aP-du-PoC" appends="YES" id="JYn-ub-roj"/>
-                                            </connections>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eze-rB-1pD">
-                                            <rect key="frame" x="28" y="94" width="42" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PA-Wd-HqR">
-                                            <rect key="frame" x="300" y="40" width="46" height="48"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <gestureRecognizers/>
-                                            <state key="normal" backgroundImage="Exit"/>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="w5L-4N-0Mm" appends="YES" id="xmQ-Xl-hhk"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rLv-Et-QvQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="dPQ-Sf-8yy">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dPQ-Sf-8yy" id="lQn-CQ-hXt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Calculator" id="58T-b8-tgi" customClass="CalculatorViewCell" customModule="LoginPassRegistration" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="58T-b8-tgi" id="yR9-bm-ltX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCJ-gS-UWF">
+                                                    <rect key="frame" x="39" y="12" width="99" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="calcLabel" destination="CCJ-gS-UWF" id="65U-CF-u65"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="exitButton" destination="5PA-Wd-HqR" id="md9-MM-QsN"/>
-                                    <outlet property="headerImage" destination="sNH-gP-sJd" id="GOl-fS-0kv"/>
-                                    <outlet property="headerLabel" destination="Eze-rB-1pD" id="1Vb-lu-hvq"/>
+                                    <outlet property="dataSource" destination="Y2j-GN-f4B" id="5Bc-2G-9JO"/>
+                                    <outlet property="delegate" destination="Y2j-GN-f4B" id="Akb-9z-WbD"/>
                                 </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rci-Ft-bxX" customClass="PrototypViewCell" customModule="LoginPassRegistration" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="156" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rci-Ft-bxX" id="0ZJ-oU-HDu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Q9K-vX-f6z" id="0Cx-0e-KKV"/>
-                            <outlet property="delegate" destination="Q9K-vX-f6z" id="7mU-6r-cv2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Z04-Oz-mXf"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UrY-jd-NB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="0aP-du-PoC">
-                    <connections>
-                        <action selector="goToPhoto:" destination="Q9K-vX-f6z" id="W1L-gH-ah2"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="w5L-4N-0Mm">
-                    <connections>
-                        <action selector="buttonExit:" destination="Q9K-vX-f6z" id="X9e-ar-McL"/>
-                    </connections>
-                </tapGestureRecognizer>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rLv-Et-QvQ" secondAttribute="trailing" id="3yN-2w-CfF"/>
+                            <constraint firstItem="cIt-D4-GLf" firstAttribute="top" secondItem="rLv-Et-QvQ" secondAttribute="bottom" id="7CK-5B-Y0A"/>
+                            <constraint firstItem="rLv-Et-QvQ" firstAttribute="top" secondItem="8hC-nG-4DH" secondAttribute="top" id="Kuw-Lx-sCz"/>
+                            <constraint firstItem="rLv-Et-QvQ" firstAttribute="leading" secondItem="8hC-nG-4DH" secondAttribute="leading" id="oZ4-Pm-512"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oL2-1I-rwl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2E-SS-Yef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="106.59670164917542"/>
+            <point key="canvasLocation" x="2508" y="64.31784107946028"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="jPd-v3-1ph">
+        <scene sceneID="JyV-Pa-DtQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ptc-8l-5Cq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cKz-yt-TaS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TrB-Q7-22I">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="533-oh-v2T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Q9K-vX-f6z" kind="relationship" relationship="rootViewController" id="KXZ-Lg-mLw"/>
+                        <segue destination="Y2j-GN-f4B" kind="relationship" relationship="rootViewController" id="uxk-8w-tcW"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hyN-rR-xdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cN-EH-Dbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="107"/>
+            <point key="canvasLocation" x="1568.8" y="64.31784107946028"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Exit" width="76" height="76"/>
-        <image name="accaunt" width="24" height="24"/>
-    </resources>
 </document>
