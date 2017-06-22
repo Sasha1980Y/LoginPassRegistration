@@ -111,6 +111,8 @@ class CalculatorViewController: UIViewController {
             
         } else {
             
+            
+            
             switch valForOperation  {
                 case "*": tabloLabel.text = String(a! * Double(tabloLabel.text!)!)
                 case "-": tabloLabel.text = String(a! - Double(tabloLabel.text!)!)
@@ -166,7 +168,7 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func sqrt(_ sender: Any) {
-                
+        
         let a = Double(tabloLabel.text!)
         let b = sqrtMy(a: a!)
         tabloLabel.text = String(b)
@@ -178,6 +180,27 @@ class CalculatorViewController: UIViewController {
     }
     
     
+    @IBAction func equals(_ sender: UIButton) {
+        
+        b = Double( tabloLabel.text!)
+        var result: Double = 0
+        var op: CharOperation = .sqrt
+        
+        switch valForOperation {
+        case "+": op = .plus
+        case "-": op = .minus
+        case "/": op = .division
+        case "*": op = .multiplication
+            
+        default:
+            break
+        }
+        
+        result = operations(a: a!, b: b!, operation: op)
+        tabloLabel.text = String(result)
+        
+        
+    }
     
     
     

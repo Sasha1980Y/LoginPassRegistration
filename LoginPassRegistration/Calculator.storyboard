@@ -58,6 +58,9 @@
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="="/>
+                                <connections>
+                                    <action selector="equals:" destination="3Eb-W2-Qpd" eventType="touchUpInside" id="Usu-J9-cuM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUR-1y-QNg">
                                 <rect key="frame" x="16" y="556" width="70" height="70"/>
