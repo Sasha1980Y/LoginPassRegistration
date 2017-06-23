@@ -12,7 +12,7 @@
         <!--Author View Controller-->
         <scene sceneID="xfo-gf-2wL">
             <objects>
-                <viewController storyboardIdentifier="ForTable" id="Y2j-GN-f4B" customClass="AuthorViewController" customModule="LoginPassRegistration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForTable" automaticallyAdjustsScrollViewInsets="NO" id="Y2j-GN-f4B" customClass="AuthorViewController" customModule="LoginPassRegistration" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gyt-MO-tfd"/>
                         <viewControllerLayoutGuide type="bottom" id="cIt-D4-GLf"/>

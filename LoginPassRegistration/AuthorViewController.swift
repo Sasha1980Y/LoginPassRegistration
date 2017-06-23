@@ -28,10 +28,15 @@ class AuthorViewController: UIViewController, UITableViewDataSource, UITableView
         self.sectionView.headerViewImage.layer.cornerRadius = self.sectionView.headerViewImage.frame.size.width / 2
         self.sectionView.headerViewImage.clipsToBounds = true
         
-        
-        
-        
-        
+      
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // scroll view to down go not
@@ -95,8 +100,9 @@ class AuthorViewController: UIViewController, UITableViewDataSource, UITableView
         if indexPath.row == 0 {
             let storyboard = UIStoryboard.init(name: "Calculator", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "CalculatorViewController")
-            present(vc, animated: true, completion: nil)
-            //navigationController?.pushViewController(vc, animated: true)
+            
+            //present(vc, animated: true, completion: nil)
+            navigationController?.pushViewController(vc, animated: true)
             }
     }
     

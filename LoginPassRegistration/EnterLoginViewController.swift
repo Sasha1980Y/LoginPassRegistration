@@ -77,7 +77,8 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         let storyboard = UIStoryboard(name: "StoryboardForTable", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ForTable") as! AuthorViewController
         vc.sectionView.headerViewLabel.text = enterYourLoginTextField.text
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
+        //present(vc, animated: true)
         
     }
     
