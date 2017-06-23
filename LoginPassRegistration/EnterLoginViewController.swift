@@ -75,7 +75,7 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
         // go to Author table
         
         let storyboard = UIStoryboard(name: "StoryboardForTable", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ForTable") as! AuthorTableViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "ForTable") as! AuthorViewController
         vc.sectionView.headerViewLabel.text = enterYourLoginTextField.text
         present(vc, animated: true)
         
@@ -123,7 +123,7 @@ class EnterLoginViewController: UIViewController, UITextFieldDelegate {
     }
     // go hear not ???
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC: AuthorTableViewController = segue.destination as! AuthorTableViewController
+        let destinationVC: AuthorViewController = segue.destination as! AuthorViewController
         destinationVC.sectionView.headerViewLabel.text = enterYourLoginTextField.text
         
     }

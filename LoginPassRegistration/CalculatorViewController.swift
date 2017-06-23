@@ -15,11 +15,11 @@ class CalculatorViewController: UIViewController {
     var a: Double? = nil
     var b: Double? = nil
     var c: Double? = nil
-    var isEdit = false
+    
     var countOperation = 0
     var valForOperation = "a"
-    
-    
+    var operationButtonIsBlock = false
+    var numberIsBlocked = false
     
     @IBOutlet weak var divisionButton: UIButton!
     @IBOutlet weak var multiplicationButton: UIButton!
@@ -53,25 +53,37 @@ class CalculatorViewController: UIViewController {
         switch condition! {
             case "1", "2", "3","4", "5", "6", "7", "8", "9", "0":
                 
+                guard numberIsBlocked == false else {return}
+                
+                
+                if operationButtonIsBlock {
+                    tabloLabel.text  = "0"
+                }
+
+                
+                // unBlock operation button
+                operationButtonIsBlock = false
+                
+                /*
                 if countOperation >= 1 && isEdit == false {
                     
                     tabloLabel.text = "0"
                     isEdit = true
-                    
-                    
                 }
-
-                
+                */
                 
                 
                 if tabloLabel.text == "0"  {
-                tabloLabel.text = condition
+                    tabloLabel.text = condition
                 } else {
-                tabloLabel.text = tabloLabel.text! + condition!
-            }
+                    tabloLabel.text = tabloLabel.text! + condition!
+                }
+            
             case ".":
                 
-                
+                if countPoint(text: tabloLabel.text!) > 0 {
+                    return
+                }
                 
                 if tabloLabel.text == "0" {
                 tabloLabel.text = "0."
@@ -80,7 +92,8 @@ class CalculatorViewController: UIViewController {
             }
             case "CE": tabloLabel.text = "0"
                 countOperation = 0
-                isEdit = false
+            
+                numberIsBlocked = false
             case "+/-":
                 
                 if tabloLabel.text == "0"  {
@@ -101,34 +114,43 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func operation(_ sender: UIButton) {
         
-        
-        let sign = sender.titleLabel?.text
-        
-        isEdit = false
+        numberIsBlocked = false
         
         if countOperation == 0 {
             a = Double( tabloLabel.text!)
+        }
+        
+        guard operationButtonIsBlock == false else { return }
+        
+        //let sign = sender.titleLabel?.text
+        
+        
+        
+        if countOperation == 0 {
+                a = Double( tabloLabel.text!)
             
         } else {
+                b = Double( tabloLabel.text!)
             
             
-            
-            switch valForOperation  {
-                case "*": tabloLabel.text = String(a! * Double(tabloLabel.text!)!)
-                case "-": tabloLabel.text = String(a! - Double(tabloLabel.text!)!)
-                case "+": tabloLabel.text = String(a! + Double(tabloLabel.text!)!)
-            default: if Double(tabloLabel.text!) == 0 {
-                tabloLabel.text = "div 0"
-            } else {
-                tabloLabel.text = String(a! / Double(tabloLabel.text!)!)
-                }
+                switch valForOperation  {
+                    case "*": tabloLabel.text = String( operations(a: a!, b: b!, operation: .multiplication))
+                    case "-": tabloLabel.text = String( operations(a: a!, b: b!, operation: .minus))
+                    case "+": tabloLabel.text = String( operations(a: a!, b: b!, operation: .plus))
+                    default:    if Double(tabloLabel.text!) == 0 {
+                                    tabloLabel.text = "div 0"
+                                } else {
+                                    tabloLabel.text = String( operations(a: a!, b: b!, operation: .division))
+                                }
+                //numberIsBlocked = true
                 
-            }
-            a = Double( tabloLabel.text!)
+                }
+            
         }
+        a = Double( tabloLabel.text!)
         countOperation += 1
-        valForOperation = sign!
-        
+        valForOperation = (sender.titleLabel?.text)!
+        operationButtonIsBlock = true
         
     }
     
@@ -166,21 +188,22 @@ class CalculatorViewController: UIViewController {
         
         return result
     }
-    
+    // MARK: sqrt(-4) work !!!
     @IBAction func sqrt(_ sender: Any) {
         
         let a = Double(tabloLabel.text!)
+        guard a! > 0.0 else { return}
         let b = sqrtMy(a: a!)
         tabloLabel.text = String(b)
         
         countOperation = 0
-        isEdit = false
-        
+                
         
     }
     
-    
+    // MARK: button "="
     @IBAction func equals(_ sender: UIButton) {
+        guard operationButtonIsBlock == false else {return}
         
         b = Double( tabloLabel.text!)
         var result: Double = 0
@@ -199,9 +222,21 @@ class CalculatorViewController: UIViewController {
         result = operations(a: a!, b: b!, operation: op)
         tabloLabel.text = String(result)
         
+        operationButtonIsBlock = true
+        numberIsBlocked = true
         
     }
     
+    // MARK: count "."
+    func countPoint(text: String) -> Int {
+        var count: Int = 0
+        for item in text.characters {
+            if item == "." {
+                count += 1
+            }
+        }
+        return count
+    }
     
     
     

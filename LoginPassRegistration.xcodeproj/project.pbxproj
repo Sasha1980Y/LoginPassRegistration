@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F0148C41EF93DD800FE9A58 /* AuthorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0148C31EF93DD800FE9A58 /* AuthorTableViewController.swift */; };
+		7F0148C41EF93DD800FE9A58 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0148C31EF93DD800FE9A58 /* AuthorViewController.swift */; };
 		7F01C3591EF7CD9400D1CA0E /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F01C3581EF7CD9400D1CA0E /* HeaderView.xib */; };
 		7F01C35B1EF7CE1800D1CA0E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01C35A1EF7CE1800D1CA0E /* HeaderView.swift */; };
 		7F01C35D1EF7CFF900D1CA0E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01C35C1EF7CFF900D1CA0E /* UIViewExtension.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7F0148C31EF93DD800FE9A58 /* AuthorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorTableViewController.swift; sourceTree = "<group>"; };
+		7F0148C31EF93DD800FE9A58 /* AuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		7F01C3581EF7CD9400D1CA0E /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		7F01C35A1EF7CE1800D1CA0E /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		7F01C35C1EF7CFF900D1CA0E /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				7F5198B91EE56F2F009D7229 /* EnterLoginViewController.swift */,
 				7F1465DB1EFAA443007DEABD /* CalculatorViewController.swift */,
 				7F5198BB1EE56F58009D7229 /* CreateLoginViewController.swift */,
-				7F0148C31EF93DD800FE9A58 /* AuthorTableViewController.swift */,
+				7F0148C31EF93DD800FE9A58 /* AuthorViewController.swift */,
 				7F01C3581EF7CD9400D1CA0E /* HeaderView.xib */,
 				7F01C35A1EF7CE1800D1CA0E /* HeaderView.swift */,
 				7F1465D71EFA9065007DEABD /* CalculatorViewCell.swift */,
@@ -197,7 +197,7 @@
 				7F5198A61EE56E2F009D7229 /* AppDelegate.swift in Sources */,
 				7F5198BC1EE56F58009D7229 /* CreateLoginViewController.swift in Sources */,
 				7F5198C01EE57C68009D7229 /* SupportingFile.swift in Sources */,
-				7F0148C41EF93DD800FE9A58 /* AuthorTableViewController.swift in Sources */,
+				7F0148C41EF93DD800FE9A58 /* AuthorViewController.swift in Sources */,
 				7F01C35D1EF7CFF900D1CA0E /* UIViewExtension.swift in Sources */,
 				7F5198BA1EE56F2F009D7229 /* EnterLoginViewController.swift in Sources */,
 				7F1465DC1EFAA443007DEABD /* CalculatorViewController.swift in Sources */,

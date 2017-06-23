@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Author Table View Controller-->
+        <!--Author View Controller-->
         <scene sceneID="xfo-gf-2wL">
             <objects>
-                <viewController storyboardIdentifier="ForTable" id="Y2j-GN-f4B" customClass="AuthorTableViewController" customModule="LoginPassRegistration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForTable" id="Y2j-GN-f4B" customClass="AuthorViewController" customModule="LoginPassRegistration" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gyt-MO-tfd"/>
                         <viewControllerLayoutGuide type="bottom" id="cIt-D4-GLf"/>

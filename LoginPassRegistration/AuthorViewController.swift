@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthorTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class AuthorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var list =  [String]()
     let sectionView = HeaderView.loadNib()
